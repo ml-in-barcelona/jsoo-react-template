@@ -1,0 +1,10 @@
+(executables
+ (names app)
+ (modes js)
+ (libraries jsoo-react.lib)
+ (preprocess
+  (pps jsoo-react.ppx)))
+
+(alias
+ (name default)
+ (deps App.js))
