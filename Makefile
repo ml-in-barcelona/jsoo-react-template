@@ -17,6 +17,7 @@ create-switch:
 
 .PHONY: init
 init: install pins ## Configure everything to develop this repository in local
+	yarn
 
 .PHONY: pins
 pins: ## Pin development dependencies
