@@ -1,1 +1,1 @@
-React.Dom.renderToElementWithId (Main.make()) "app"
+React.Dom.renderToElementWithId (Main.make ()) "app"

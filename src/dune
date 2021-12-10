@@ -2,9 +2,11 @@
  (names app)
  (modes js)
  (libraries jsoo-react.lib)
+ (js_of_ocaml
+  (javascript_files requires.js))
  (preprocess
   (pps jsoo-react.ppx)))
 
 (alias
  (name default)
- (deps App.js))
+ (deps app.js))

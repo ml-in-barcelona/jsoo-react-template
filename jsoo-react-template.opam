@@ -29,5 +29,5 @@ build: [
 ]
 dev-repo: "git+https://github.com/ml-in-barcelona/jsoo-react-template.git"
 pin-depends: [
-  [ "jsoo-react.dev" "git+https://github.com/ml-in-barcelona/jsoo-react.git" ]
+  [ "jsoo-react.dev" "git+https://github.com/ml-in-barcelona/jsoo-react.git#724f65e" ]
 ]

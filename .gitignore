@@ -3,3 +3,8 @@ _opam/
 
 # Dune build folder
 _build/
+
+# Webpack build folder
+build/
+
+node_modules/

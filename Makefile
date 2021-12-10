@@ -16,14 +16,14 @@ create-switch:
 	opam switch create . 4.13.1 --deps-only
 
 .PHONY: init
-init: setup-git-hooks install ## Configure everything to develop this repository in local
+init: install pins ## Configure everything to develop this repository in local
 
-.PHONY: setup-git-hooks
-setup-git-hooks: ## Configure git to point githooks in .githooks folder
-	git config core.hooksPath .githooks
+.PHONY: pins
+pins: ## Pin development dependencies
+	opam pin add jsoo-react-template.dev .
 
 .PHONY: install
-install: all ## Install development dependencies
+install: ## Install development dependencies
 	opam install . --deps-only --with-test
 
 .PHONY: deps
@@ -33,9 +33,13 @@ deps: $(opam_file) ## Alias to update the opam file and install the needed deps
 build: ## Build the project
 	$(DUNE) build @@default
 
+.PHONY: build-prod
+build-prod: ## Build the project with prod mode
+	$(DUNE) build @@default --profile=prod
+
 .PHONY: start
-start: all ## Serve the application with a local HTTP server
-	cd demo && yarn start
+start: ## Serve the application with a local HTTP server
+	yarn server
 
 .PHONY: clean
 clean: ## Clean build artifacts and other generated files
@@ -53,5 +57,5 @@ format-check: ## Checks if format is correct
 watch: ## Watch for the filesystem and rebuild on every change
 	$(DUNE) build @@default --watch
 
-$(opam_file): dune-project ## Update the package dependencies when new deps are added to dune-project
+$(opam_file): jsoo-react-template.opam.template dune-project ## Update the package dependencies when new deps are added to dune-project
 	opam exec -- dune build @install        # Update the $(project_name).opam file
