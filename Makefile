@@ -21,7 +21,7 @@ init: install pins ## Configure everything to develop this repository in local
 
 .PHONY: pins
 pins: ## Pin development dependencies
-	opam pin add jsoo-react-template.dev .
+	opam pin add $(project_name).dev .
 
 .PHONY: install
 install: ## Install development dependencies
@@ -58,5 +58,5 @@ format-check: ## Checks if format is correct
 watch: ## Watch for the filesystem and rebuild on every change
 	$(DUNE) build @@default --watch
 
-$(opam_file): jsoo-react-template.opam.template dune-project ## Update the package dependencies when new deps are added to dune-project
+$(opam_file): $(project_name).opam.template dune-project ## Update the package dependencies when new deps are added to dune-project
 	opam exec -- dune build @install        # Update the $(project_name).opam file
