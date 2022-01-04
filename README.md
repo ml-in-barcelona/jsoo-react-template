@@ -23,4 +23,4 @@ This will create an opam [local switch](https://opam.ocaml.org/blog/opam-local-s
     ```
 
 
-2. Now run `make build` to build the project, and `yarn start` to start the local development server. You should be able to access the rendered site in http://localhost:8000/.
+2. Now run `make build` to build the project, and `make start` to start the local development server. You should be able to access the rendered site in http://localhost:8000/.
