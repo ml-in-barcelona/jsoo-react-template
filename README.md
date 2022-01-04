@@ -14,7 +14,7 @@ After installing both package managers:
     make create-switch
     ```
 
-This will create an opam local switch.
+This will create an opam [local switch](https://opam.ocaml.org/blog/opam-local-switches/).
 
 2. Install dependencies with:
 
