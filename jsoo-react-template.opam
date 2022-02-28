@@ -8,7 +8,7 @@ license: "MIT"
 homepage: "https://github.com/ml-in-barcelona/jsoo-react-template"
 bug-reports: "https://github.com/ml-in-barcelona/jsoo-react-template/issues"
 depends: [
-  "ocaml" {>= "4.10.2"}
+  "ocaml" {>= "4.13.1"}
   "dune" {>= "2.9" & >= "2.0"}
   "jsoo-react" {dev}
   "ocaml-lsp-server" {dev}
@@ -32,5 +32,5 @@ build: [
 ]
 dev-repo: "git+https://github.com/ml-in-barcelona/jsoo-react-template.git"
 pin-depends: [
-  [ "jsoo-react.dev" "git+https://github.com/ml-in-barcelona/jsoo-react.git#8805668" ]
+  [ "jsoo-react.dev" "git+https://github.com/ml-in-barcelona/jsoo-react.git#831f451" ]
 ]

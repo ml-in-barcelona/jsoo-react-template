@@ -20,7 +20,7 @@
   "Template for a minimal jsoo-react project")
  (depends
   (ocaml
-   (>= 4.10.2))
+   (>= 4.13.1))
   (dune
    (>= 2.0))
   (jsoo-react :dev)
