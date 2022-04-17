@@ -13,7 +13,7 @@ help: ## Print this help message
 
 .PHONY: create-switch
 create-switch:
-	opam switch create . --deps-only
+	opam switch create . --deps-only --locked
 
 .PHONY: init
 init: create-switch install pins ## Configure everything to develop this repository in local
@@ -25,7 +25,8 @@ pins: ## Pin development dependencies
 
 .PHONY: install
 install: ## Install development dependencies
-	opam install . --deps-only --with-test
+	opam install . --deps-only --with-test --locked
+	opam lock .
 
 .PHONY: deps
 deps: $(opam_file) ## Alias to update the opam file and install the needed deps
