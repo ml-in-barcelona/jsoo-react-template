@@ -13,10 +13,10 @@ help: ## Print this help message
 
 .PHONY: create-switch
 create-switch:
-	opam switch create . 4.13.1 --deps-only
+	opam switch create . --deps-only
 
 .PHONY: init
-init: install pins ## Configure everything to develop this repository in local
+init: create-switch install pins ## Configure everything to develop this repository in local
 	yarn
 
 .PHONY: pins
