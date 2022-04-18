@@ -11,16 +11,9 @@ After installing both package managers:
 1. Run:
 
     ```bash
-    make create-switch
-    ```
-
-This will create an opam [local switch](https://opam.ocaml.org/blog/opam-local-switches/).
-
-2. Install dependencies with:
-
-    ```bash
     make init
     ```
 
+This will create an opam [local switch](https://opam.ocaml.org/blog/opam-local-switches/) and install all dependencies.
 
 2. Now run `make build` to build the project, and `make start` to start the local development server. You should be able to access the rendered site in http://localhost:8000/.

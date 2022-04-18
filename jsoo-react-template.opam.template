@@ -1,3 +1,0 @@
-pin-depends: [
-  [ "jsoo-react.dev" "git+https://github.com/ml-in-barcelona/jsoo-react.git#40bc0c2" ]
-]
