@@ -1,0 +1,78 @@
+opam-version: "2.0"
+name: "jsoo-react-template"
+version: "dev"
+synopsis: "Project template for jsoo-react"
+description: "Template for a minimal jsoo-react project"
+maintainer: ["davesnx" "jchavarri"]
+authors: ["davesnx" "jchavarri"]
+license: "MIT"
+homepage: "https://github.com/ml-in-barcelona/jsoo-react-template"
+bug-reports: "https://github.com/ml-in-barcelona/jsoo-react-template/issues"
+depends: [
+  "base-bigarray" {= "base"}
+  "base-bytes" {= "base" & dev}
+  "base-threads" {= "base"}
+  "base-unix" {= "base"}
+  "biniou" {= "1.2.1" & dev}
+  "cmdliner" {= "1.1.1" & dev}
+  "cppo" {= "1.6.8" & dev}
+  "csexp" {= "1.5.1" & dev}
+  "dune" {= "3.0.3"}
+  "dune-build-info" {= "3.0.3" & dev}
+  "dune-rpc" {= "3.0.3" & dev}
+  "dyn" {= "3.0.3" & dev}
+  "easy-format" {= "1.3.2" & dev}
+  "fiber" {= "3.0.3" & dev}
+  "gen_js_api" {= "1.0.9" & dev}
+  "js_of_ocaml" {= "4.0.0" & dev}
+  "js_of_ocaml-compiler" {= "4.0.0" & dev}
+  "jsoo-react" {= "dev" & dev}
+  "menhir" {= "20220210" & dev}
+  "menhirLib" {= "20220210" & dev}
+  "menhirSdk" {= "20220210" & dev}
+  "ocaml" {= "4.14.0"}
+  "ocaml-base-compiler" {= "4.14.0"}
+  "ocaml-compiler-libs" {= "v0.12.4" & dev}
+  "ocaml-config" {= "2"}
+  "ocaml-lsp-server" {= "1.11.0" & dev}
+  "ocaml-options-vanilla" {= "1"}
+  "ocamlbuild" {= "0.14.1" & dev}
+  "ocamlfind" {= "1.9.3" & dev}
+  "ocamlformat-rpc-lib" {= "0.21.0" & dev}
+  "octavius" {= "1.2.2" & dev}
+  "ojs" {= "1.1.0" & dev}
+  "omd" {= "1.3.1" & dev}
+  "ordering" {= "3.0.3" & dev}
+  "pp" {= "1.1.2" & dev}
+  "ppx_derivers" {= "1.2.1" & dev}
+  "ppx_yojson_conv_lib" {= "v0.15.0" & dev}
+  "ppxlib" {= "0.26.0" & dev}
+  "re" {= "1.10.3" & dev}
+  "seq" {= "base" & dev}
+  "sexplib0" {= "v0.15.0" & dev}
+  "spawn" {= "v0.15.0" & dev}
+  "stdlib-shims" {= "0.3.0" & dev}
+  "stdune" {= "3.0.3" & dev}
+  "topkg" {= "1.0.5" & dev}
+  "uchar" {= "0.0.2" & dev}
+  "uutf" {= "1.0.3" & dev}
+  "xdg" {= "3.0.3" & dev}
+  "yojson" {= "1.7.0" & dev}
+]
+build: [
+  ["dune" "subst"] {dev}
+  [
+    "dune"
+    "build"
+    "-p"
+    name
+    "-j"
+    jobs
+    "--promote-install-files=false"
+    "@install"
+    "@runtest" {with-test}
+    "@doc" {with-doc}
+  ]
+  ["dune" "install" "-p" name "--create-install-files" name]
+]
+dev-repo: "git+https://github.com/ml-in-barcelona/jsoo-react-template.git"
