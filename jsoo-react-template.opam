@@ -10,7 +10,7 @@ bug-reports: "https://github.com/ml-in-barcelona/jsoo-react-template/issues"
 depends: [
   "ocaml" {>= "4.12.1"}
   "dune" {>= "3.0"}
-  "jsoo-react" {dev}
+  "jsoo-react" {>= "0.1"}
   "ocaml-lsp-server" {dev}
   "odoc" {with-doc}
 ]
@@ -31,6 +31,3 @@ build: [
   ["dune" "install" "-p" name "--create-install-files" name]
 ]
 dev-repo: "git+https://github.com/ml-in-barcelona/jsoo-react-template.git"
-pin-depends: [
-  [ "jsoo-react.dev" "git+https://github.com/ml-in-barcelona/jsoo-react.git#bcdbf06" ]
-]

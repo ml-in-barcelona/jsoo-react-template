@@ -19,10 +19,6 @@ create-switch:
 init: create-switch install pins ## Configure everything to develop this repository in local
 	yarn
 
-.PHONY: pins
-pins: ## Pin development dependencies
-	opam pin add $(project_name).dev .
-
 .PHONY: install
 install: ## Install development dependencies
 	opam install . --deps-only --with-test --locked
